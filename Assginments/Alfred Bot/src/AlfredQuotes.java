@@ -6,14 +6,15 @@ public class AlfredQuotes {
         return "Hello, lovely to see you. How are you?";
     }
 
-    public String guestGreeting(String name) {
-        String Greeting= String.format("Hello, %s. Lovely to see you.",name);
+    public String guestGreeting(String name,String dayPeriod) {
+        String Greeting= String.format("Good %s, %s. Lovely to see you.", dayPeriod,name);
         return Greeting;
     }
 
     public String dateAnnouncement() {
         Date date = new Date();
-        return "Current date is: " + date;
+        String Date= String.format("It is currently %s",date);
+        return Date;
 
     }
 

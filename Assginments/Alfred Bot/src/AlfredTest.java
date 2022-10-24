@@ -8,7 +8,7 @@ public class AlfredTest {
         // Make an instance of AlfredQuotes to access all its methods.
         AlfredQuotes alfredBot = new AlfredQuotes();
         String testGreeting = alfredBot.basicGreeting();
-        String testGuestGreeting = alfredBot.guestGreeting("Beth Kane");
+        String testGuestGreeting = alfredBot.guestGreeting("Beth Kane","Evening");
         String testDateAnnouncement = alfredBot.dateAnnouncement();
         String alexisTest = alfredBot.respondBeforeAlexis("Alexis! Play some low-fi beats.");
         String alfredTest = alfredBot.respondBeforeAlexis("I can't find my yo-yo. Maybe Alfred will know where it is.");
@@ -23,5 +23,6 @@ public class AlfredTest {
          System.out.println(alexisTest);
          System.out.println(alfredTest);
          System.out.println(notRelevantTest);
+
     }
 }
