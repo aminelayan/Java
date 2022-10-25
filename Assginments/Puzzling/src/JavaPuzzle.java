@@ -25,7 +25,7 @@ public class JavaPuzzle {
         String letter = "";
         for (int i = 0; i < 8; i++) {
             Character thisPass = getRandomLetter();
-            String passLetter = Character.toString(thisPass);
+            String passLetter = thisPass.toString();
             password += letter.concat(passLetter);
         }
         return password;
