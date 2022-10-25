@@ -37,7 +37,7 @@ public class JavaPuzzle {
         int arrayLen = Integer.parseInt(input);
         ArrayList<String> newPass = new ArrayList<String>();
         String letter = "";
-        for (int a = 0; a < 8; a++) {
+        for (int a = 0; a < arrayLen; a++) {
             String word = "";
             for (int i = 0; i < 8; i++) {
                     Character thisCharI = getRandomLetter();
