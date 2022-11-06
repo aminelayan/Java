@@ -28,11 +28,8 @@ public class BooksController {
     }
     @GetMapping ("/{id}")
     public String show(@PathVariable("id") Long id, Model model){
-        Book books = bookService.findBook(id);
-            model.addAttribute("title", books.getTitle());
-            model.addAttribute("desc", books.getDescription());
-            model.addAttribute("lang", books.getLanguage());
-            model.addAttribute("pages", books.getNumberOfPages());
+        Book book = bookService.findBook(id);
+            model.addAttribute("book", book);
         return "Book.jsp";
         }
 

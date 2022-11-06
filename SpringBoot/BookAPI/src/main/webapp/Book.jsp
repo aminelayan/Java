@@ -15,9 +15,9 @@
         <th>ID</th>
     </tr>
         <tr>
-            <td><c:out value="${title}"></c:out> </td>
-            <td><c:out value="${pages}"></c:out></td>
-            <td><c:out value="${id}"></c:out></td>
+            <td> <c:out value="${book.title}"></c:out> </td>
+            <td><c:out value="${book.numberOfPages}"></c:out></td>
+            <td><c:out value="${book.id}"></c:out></td>
         </tr>
 </table>
 </body>
