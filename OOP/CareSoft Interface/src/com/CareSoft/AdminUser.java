@@ -62,7 +62,6 @@ public class AdminUser extends User implements HIPAACompliantUser, HIPAAComplian
             return false;
         }
     }
-
     @Override
     public ArrayList<String> reportSecurityIncidents() {
         // TODO Auto-generated method stub

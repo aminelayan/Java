@@ -30,9 +30,7 @@ public class Physician extends User implements HIPAACompliantUser{
             setPin(pin);
             return true;
         }
-        else {
             return false;
-        }
     }
 
     @Override
@@ -42,9 +40,7 @@ public class Physician extends User implements HIPAACompliantUser{
         if(confirmedAuthID==physicianId) {
             return true;
         }
-        else {
             return false;
-        }
     }
 
     public void newPatientNotes(String notes, String patientName, Date date) {
