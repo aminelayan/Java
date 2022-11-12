@@ -67,7 +67,7 @@ public class HomeController {
 
         // Add once service is implemented:
         User user = userService.login(newLogin, result);
-        if(result.hasErrors()) {
+        if (result.hasErrors()) {
             model.addAttribute("newUser", new User());
             return "index.jsp";
         }
@@ -75,7 +75,7 @@ public class HomeController {
         // No errors!
         // TO-DO Later: Store their ID from the DB in session,
         // in other words, log them in.
-        session.setAttribute("userId",user.getId());
+        session.setAttribute("userId", user.getId());
         return "redirect:/books";
     }
     @GetMapping("/books")
