@@ -89,7 +89,7 @@ public class ProjectMangerController {
         Long userId= (Long) session.getAttribute("userId");
         User currentUser=userService.findByID(userId);
         newProject.setProjectLeader(currentUser);
-        newProject.addUserToProject(currentUser);
+//        newProject.addUserToProject(currentUser);
         projectService.createProject(newProject);
         return "redirect:/dashboard";
     }
@@ -164,8 +164,10 @@ public class ProjectMangerController {
         else {
             Long userId= (Long) session.getAttribute("userId");
             User updatedBy=userService.findByID(userId);
+            Project thisProject = projectService.findProject(id);
             newProject.setProjectLeader(updatedBy);
-            newProject.addUserToProject(updatedBy);
+            List<User> projectusers = thisProject.getUsers();
+            newProject.setUsers(projectusers);
             projectService.updateProject(newProject);
             return "redirect:/dashboard";
         }
