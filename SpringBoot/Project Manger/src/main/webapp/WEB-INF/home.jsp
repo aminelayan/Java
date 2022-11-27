@@ -11,8 +11,10 @@
 </head>
 <body>
 <h1>Welcome, <span>${currentUser.userName}</span></h1>
-<h2>Books from everyone's shelves:</h2>
-<table class="table">
+<h2>.............</h2>
+<button type="submit" class="btn btn-secondary"><a href="/projects/new">Add New Project</a></button>
+<button type="submit" class="btn btn-success"><a href="/logout">Log Out</a></button>
+<table class="table" style="margin-top: 10px">
     <thead>
     <tr>
         <th scope="col">Project</th>
@@ -27,39 +29,17 @@
             <td><a href="/projects/${notProjectLeader.id}">${notProjectLeader.title}</a></td>
             <td>${notProjectLeader.projectLeader.userName}</td>
             <td>${notProjectLeader.duedate}</td>
-            <td><a href ='/projects/${notProjectLeader.id}/join'>Join Team</a></td>
+               <td><form action="/projects/${notProjectLeader.id}/delete" method="post">
+                   <input type="hidden" name="_method" value="delete">
+                   <button type="submit" class="btn btn-secondary" type="submit">Delete Project</button>
+                   <button type="submit" class="btn btn-danger"><a href ='/projects/${notProjectLeader.id}/edit'>Edit</a></button>
+               </form>
+
+            </td>
         </tr>
     </c:forEach>
     </tbody>
 </table>
-<table class="table">
-    <thead>
-    <tr>
-        <th scope="col">Project</th>
-        <th scope="col">Team Lead</th>
-        <th scope="col">Due Date</th>
-        <th scope="col">Actions</th>
-    </tr>
-    </thead>
-    <tbody>
-    <c:forEach var="projectLeader" items="${projectLeader}">
-        <tr>
-            <td><a href="/projects/${projectLeader.id}">${projectLeader.title}</a></td>
-            <td>${projectLeader.projectLeader.userName}</td>
-            <td>${projectLeader.duedate}</td>
-            <c:choose>
-            <c:when test="${projectLeader.projectLeader.id==currentUser.id}">
-                <td><a href ='/projects/${projectLeader.id}/edit'>edit</a></td>
-            </c:when>
-            <c:otherwise>
-                <td><a href ='/projects/${projectLeader.id}/leave'>Leave Team</a></td>
-            </c:otherwise>
-            </c:choose>
-            </td>
-             </tr>
-    </c:forEach>
-</table>
-<a href="/logout">Log Out</a>
-<a href="/projects/new">Add New Project</a>
+
 </body>
 </html>

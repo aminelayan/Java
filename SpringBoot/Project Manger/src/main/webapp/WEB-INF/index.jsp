@@ -19,28 +19,28 @@
     <div class="form-group">
         <form:label path="userName">User Name: </form:label>
         <form:input path="userName"/>
-        <form:errors path="userName"/>
+        <form:errors path="userName" class="alert alert-danger p-1" />
     </div>
 
     <div class="form-group">
         <form:label path="email">Email: </form:label>
         <form:input type="email" path="email"/>
-        <form:errors path="email"/>
+        <form:errors path="email"  class="alert alert-danger p-1"/>
         <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
     </div>
 
     <div class="form-group">
         <form:label path="password">Password: </form:label>
         <form:input type="password" path="password"/>
-        <form:errors path="password"/>
+        <form:errors path="password"  class="alert alert-danger p-1"/>
     </div>
 
     <div class="form-group">
         <form:label path="confirm">Confirm PW: </form:label>
         <form:input type="password" path="confirm"/>
-        <form:errors path="confirm"/>
+        <form:errors path="confirm"  class="alert alert-danger p-1"/>
     </div>
-    <input type="submit" value="Registration" class="btn btn-primary">
+    <input type="submit" value="Registration" class="btn btn-danger">
 </form:form>
 
 <%--@elvariable id="newLogin" type=""--%>
@@ -49,15 +49,15 @@
     <div class="form-group">
         <form:label path="email">Email: </form:label>
         <form:input path="email"/>
-        <form:errors path="email"/>
+        <form:errors path="email"  class="alert alert-danger p-1" />
         <small  class="form-text text-muted">We'll never share your email with anyone else.</small>
     </div>
     <div class="form-group">
         <form:label path="password">Password: </form:label>
         <form:input type="password" path="password"/>
-        <form:errors path="password"/>
+        <form:errors path="password"  class="alert alert-danger p-1" />
     </div>
-    <input type="submit" value="Log In" class="btn btn-primary">
+    <input type="submit" value="Log In" class="btn btn-dark">
 </form:form>
 </body>
 </html>

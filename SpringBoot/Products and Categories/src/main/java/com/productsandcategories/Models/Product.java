@@ -32,5 +32,4 @@ public class Product {
     protected void onUpdate(){
         this.updatedAt = new Date();
     }
-
 }

@@ -157,17 +157,12 @@ public class ProjectMangerController {
     }
 
     @PutMapping("projects/{id}/edit")
-    public String updateProject(@PathVariable("id") Long id,@Valid @ModelAttribute("newProject") Project newProject, BindingResult result,  HttpSession session) {
+    public String updateProject(@Valid @PathVariable("id") Long id,@Valid @ModelAttribute("newProject") Project newProject, BindingResult result,  HttpSession session) {
         if(result.hasErrors()) {
-            return "projects/{id}/edit";
+            return "editProject";
         }
         else {
             Long userId= (Long) session.getAttribute("userId");
-            User updatedBy=userService.findByID(userId);
-            Project thisProject = projectService.findProject(id);
-            newProject.setProjectLeader(updatedBy);
-            List<User> projectusers = thisProject.getUsers();
-            newProject.setUsers(projectusers);
             projectService.updateProject(newProject);
             return "redirect:/dashboard";
         }

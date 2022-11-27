@@ -22,6 +22,9 @@ public class Category {
             inverseJoinColumns = @JoinColumn(name = "product_id")
     )
     private List<Product> products;
+
+    
+
     @PrePersist
     protected void onCreate(){
         this.createdAt = new Date();

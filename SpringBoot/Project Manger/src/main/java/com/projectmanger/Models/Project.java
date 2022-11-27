@@ -45,7 +45,7 @@ public class Project {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "project_leader")
-    private User projectLeader;
+    private User teamleader;
 
     @PrePersist
     protected void onCreate() {
